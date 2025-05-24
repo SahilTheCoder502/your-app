@@ -44,10 +44,6 @@ async def get_marks(name: List[str] = Query(...)):
     results = [marks_data.get(n, None) for n in name]
     return {"marks": results}
 # main.py
-from fastapi import FastAPI
 
-app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, World!"}
+
