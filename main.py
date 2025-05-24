@@ -40,3 +40,9 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return {"message": "Hello, World!"}
+@app.get("/about")
+def about():
+    return {"info": "This is a FastAPI deployment on Vercel!"}
+@app.get("/greet")
+def greet(name: str):
+    return {"greeting": f"Hello, {name}!"}
