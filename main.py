@@ -4,13 +4,13 @@ from typing import List
 
 app = FastAPI()
 
-# # Enable CORS for all origins and allow only GET methods
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],
-#     allow_methods=["GET"],
-#     allow_headers=["*"],
-# )
+# Enable CORS for all origins and allow only GET methods
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
 
 # # Your student marks data as a dictionary for quick lookup
 marks_data = {
