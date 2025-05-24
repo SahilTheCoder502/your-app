@@ -23,9 +23,11 @@ def load_data():
     marks_data = {entry["name"]: entry["marks"] for entry in data}
 
 @app.get("/api")
-async def get_marks(name: List[str] = Query(...)):
-    results = [marks_data.get(n, None) for n in name]
-    return {"marks": results}
+# async def get_marks(name: List[str] = Query(...)):
+#     results = [marks_data.get(n, None) for n in name]
+#     return {"marks": results}
+def read_api(name: str = "World"):
+    return {"message": f"Hello, {name}!"}
 
 handler = Mangum(app)
 @app.get("/")
